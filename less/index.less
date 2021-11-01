@@ -1,0 +1,71 @@
+// out: ../css/index.css
+
+@primary: #2980b9;
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.slider-container {
+    overflow: hidden;
+    height: 600px;
+    width: 100vw;
+    position: relative;
+
+    .slides-row {
+        display: flex;
+        min-width: 100vw;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: all 0.5s;
+
+        .slide {
+            width: 100%;
+            > img {
+                width: 100vw;
+            }
+        }
+    }
+    .arrow {
+        position: absolute;
+        top: 50%;
+        z-index: 10;
+        display: inline-block;
+        padding: 12px 15px;
+        background-color: #fff;
+        cursor: pointer;
+        user-select: none;
+        -webkit-user-select: none;
+
+        &.prev {
+            left: 0;
+        }
+        &.next {
+            right: 0;
+        }
+    }
+    .dots {
+        position: absolute;
+        bottom: 30px;
+        left: 0;
+        right: 0;
+        z-index: 11;
+        text-align: center;
+
+        .dot {
+            margin: 0 3px;
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background-color: #fff;
+            border-radius: 100%;
+            cursor: pointer;
+
+            &.active {
+                background-color: grey;
+            }
+        }
+    }
+}
